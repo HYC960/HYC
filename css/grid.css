@@ -1,0 +1,87 @@
+/* General Section Styling */
+#services {
+    padding: 40px 10px; /* Adjust padding for smaller screens */
+    background-color: #f7f7f7;
+}
+
+#services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Grid Layout */
+#services .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller min width for better fit */
+    gap: 16px; /* Reduced gap for tighter layout */
+}
+
+/* Card Styling */
+#services .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px; /* Slightly reduced padding */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Faster transitions */
+}
+
+#services .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Optimization */
+#services .card img {
+    width: 100%; /* Ensures image scales within the card */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 180px; /* Restricts height for uniformity */
+    border-radius: 6px; /* Rounded corners */
+    object-fit: cover; /* Proper cropping for different dimensions */
+    margin-bottom: 12px; /* Reduced margin for tighter layout */
+}
+
+/* Headings and Paragraphs */
+#services .card h3 {
+    margin: 0;
+    font-size: 1.4rem; /* Slightly smaller font size for better scaling */
+    color: #333;
+}
+
+#services .card p {
+    font-size: 0.95rem; /* Slightly smaller text for compact view */
+    color: #666;
+    line-height: 1.4; /* Improved readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #services {
+        padding: 30px 10px; /* Smaller padding for mobile */
+    }
+
+    #services .grid {
+        grid-template-columns: 1fr; /* Stacks cards on smaller screens */
+    }
+
+    #services .card {
+        padding: 12px; /* Compact padding for smaller screens */
+    }
+
+    #services .card img {
+        max-height: 140px; /* Adjust image height for smaller viewports */
+    }
+
+    #services .card h3 {
+        font-size: 1.2rem; /* Adjust heading size for mobile */
+    }
+
+    #services .card p {
+        font-size: 0.9rem; /* Smaller text for smaller screens */
+    }
+}

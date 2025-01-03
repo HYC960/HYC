@@ -1,0 +1,211 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #4a90e2, #50bfa0);
+  color: #fff;
+  padding: 2rem 1rem;
+  border-bottom: 3px solid #0077b6;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Items Container */
+#items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Item Card */
+.item-card {
+  display: flex; /* Flex layout for image and details */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* Ensure responsiveness */
+  padding: 1rem;
+}
+
+.item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Updated Item Image Styling */
+.item-image {
+  width: 250px; /* Fixed width for consistent layout */
+  height: 250px; /* Fixed height for consistent layout */
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+  flex-shrink: 0; /* Prevent shrinking of image */
+}
+
+/* Updated Item Details */
+.item-details {
+  padding: 1rem 1.5rem;
+  text-align: left; /* Align text to the left */
+  flex: 1; /* Take remaining space */
+}
+
+.item-details h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.item-details .price {
+  font-size: 1.4rem;
+  color: #4a90e2;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.item-details .stars {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.item-details .stars span {
+  font-size: 1.5rem;
+  color: #fbc02d;
+  margin-right: 5px;
+}
+
+.item-details .stars span.unfilled {
+  color: #ddd;
+}
+
+.item-details .description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #4a90e2;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0f4c75, #3282b8);
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.navbar .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ffdd00;
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.nav-links li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-links .dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.nav-links .dropdown li a {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.nav-links .dropdown li a:hover {
+  color: #0f4c75;
+}
