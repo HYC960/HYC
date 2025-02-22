@@ -1,173 +1,393 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <p>Innovative AC Solutions for a Better Tomorrow</p>
-            <a href="public/sales.html" class="btn-primary">Buy Old Item</a>
-        </div>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Aahil Repair</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 
-    <main>
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide"><img src="../assets/images/ac-50.png" alt="Deal 1"></div>
-                <div class="slide"><img src="./assets/images/100colling.png" alt="Deal 2"></div>
-                <div class="slide"><img src="./assets/images/home.png" alt="Deal 3"></div>
+    <style>
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #fbbf24;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Hover effect */
+        .back-to-top:hover {
+            background-color: #f59e0b;
+            transform: scale(1.1) translateY(0);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Show the button when scrolling */
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glowing effect */
+        .back-to-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: glowing 1.5s infinite alternate;
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 5px #fbbf24, 0 0 10px #fbbf24, 0 0 15px #fbbf24;
+            }
+            100% {
+                box-shadow: 0 0 20px #fbbf24, 0 0 30px #fbbf24, 0 0 40px #fbbf24;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gradient-to-r from-gray-900 to-black text-white shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo -->
+            <a href="#" class="text-3xl font-extrabold tracking-wider">Aahil Repair.</a>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <button id="menu-toggle" class="lg:hidden text-2xl focus:outline-none">
+                &#9776;
+            </button>
+
+            <!-- Nav Links -->
+            <ul id="menu" class="hidden lg:flex space-x-8 text-lg">
+                <li><a href="#services" class="hover:text-yellow-400 transition">Services</a></li>
+                <li><a href="#about" class="hover:text-yellow-400 transition">About</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Dropdown Menu (Mobile) -->
+        <div id="mobile-menu" class="hidden bg-gray-900 text-white lg:hidden">
+            <ul class="flex flex-col space-y-2 py-4 px-6">
+                <li><a href="#services" class="block hover:text-yellow-400 transition">Services</a></li>
+                <li><a href="#about" class="block hover:text-yellow-400 transition">About</a></li>
+                <li><a href="#contact" class="block hover:text-yellow-400 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-500 to-purple-700 text-white flex flex-col items-center justify-center overflow-hidden">
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold animate-fade">We Revive Your Gadgets!</h1>
+            <p class="text-2xl md:text-3xl mt-4">Expert Repairs for All Electronic Devices</p>
+            <button class="mt-8 px-8 py-4 bg-yellow-500 text-black rounded-full font-bold hover:bg-yellow-600 transition text-xl">Get Started</button>
+        </div>
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted class="w-full h-full object-cover opacity-30">
+                <source src="repair-animation.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-12 animate-slide-in">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3">
+                    <img src="assets/images/ac.png" alt="AC Repair" class="w-24 mx-auto mb-6">
+                    <h3 class="text-2xl font-semibold mb-4">AC Repair</h3>
+                    <p class="text-gray-600">Fast and reliable fixes for all AC Repair brands and issues.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3">
+                    <img src="assets/images/washing.png" alt="Washing Machine Repair" class="w-24 mx-auto mb-6">
+                    <h3 class="text-2xl font-semibold mb-4">Washing Machine Repair</h3>
+                    <p class="text-gray-600">Comprehensive solutions for all types of Washing Machines.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3">
+                    <img src="assets/images/all.png" alt="All Electrical Items Repair" class="w-24 mx-auto mb-6">
+                    <h3 class="text-2xl font-semibold mb-4">All Electrical Items</h3>
+                    <p class="text-gray-600">Expert services for all sizes and brands of Electrical Items.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+        <!--Why Us Section-->
+        <section id="why-us" class="py-20 bg-gradient-to-r from-indigo-500 to-indigo-800 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-5xl font-extrabold mb-16 tracking-wide animate__animated animate__fadeIn">Why Choose Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="bg-white p-10 rounded-xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-4 hover:scale-105 duration-300 ease-in-out">
+                        <div class="w-20 h-20 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <img src="assets/images/ex.png" alt="Experience" class="w-12 h-12 text-white">
+                        </div>
+                        <h3 class="text-3xl font-semibold mb-4 text-black">Expertise & Experience</h3>
+                        <p class="text-gray-700">With years of industry-leading experience, our professionals provide unmatched service.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-4 hover:scale-105 duration-300 ease-in-out">
+                        <div class="w-20 h-20 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <img src="assets/images/trust.png" alt="Trust" class="w-12 h-12 text-white">
+                        </div>
+                        <h3 class="text-3xl font-semibold mb-4 text-black">Trustworthy & Reliable</h3>
+                        <p class="text-gray-700">We build strong relationships with our clients, ensuring complete trust and satisfaction.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-4 hover:scale-105 duration-300 ease-in-out">
+                        <div class="w-20 h-20 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <img src="assets/images/coustom.png" alt="Customer Service" class="w-12 h-12 text-white">
+                        </div>
+                        <h3 class="text-3xl font-semibold mb-4 text-black">Exceptional Customer Service</h3>
+                        <p class="text-gray-700">Our team is dedicated to offering exceptional support at every step of your journey with us.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+
+
+
+  <!-- About Section -->
+<div class="about-container fade-in">
+    <h3 class="about-title text-4xl font-extrabold mb-6 text-gradient">About Us</h3>
+    <div class="about-content flex items-center gap-8">
+        <!-- Owner Photo -->
+        <div class="owner-photo">
+            <img src="assets/images/owner.png" alt="Owner's Photo" class="w-48 h-48 rounded-full shadow-lg transform transition-all hover:scale-110 hover:rotate-6"/>
+        </div>
+
+        <!-- Owner's Details -->
+        <div class="owner-details">
+            <p class="text-lg font-medium mb-4 text-light">Firoz Ansari</p>
+            <p class="text-sm text-muted mb-6">Owner & Founder | Aahil Repair.</p>
+            <p class="text-base leading-relaxed text-gray-600">As the founder of Ansari Electricals, Firoz Ansari is dedicated to providing exceptional service and innovative solutions for all electrical needs. With years of expertise, Kaif ensures that every client receives the best quality repairs, guided by integrity and professionalism. He is committed to staying ahead of the curve in technology and customer satisfaction.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    .about-container {
+        background: linear-gradient(to right, #5c6bc0, #1e3d58);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 1s ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        text-align: center;
+    }
+    
+    .about-title {
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold; /* Ensures the title is bold */
+    }
+    
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .owner-photo img {
+        object-fit: cover;
+        border: 3px solid #ffffff;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .owner-details p {
+        color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .owner-details .text-muted {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-8 animate-slide-in">Contact Us</h2>
+            <p class="text-lg mb-6 text-gray-700">Have a question or need help? Get in touch with us!</p>
+            <form class="max-w-lg mx-auto space-y-6">
+                <input type="text" class="w-full px-4 py-3 border rounded-full shadow-lg focus:ring-2 focus:ring-blue-600" placeholder="Your Name">
+                <input type="email" class="w-full px-4 py-3 border rounded-full shadow-lg focus:ring-2 focus:ring-blue-600" placeholder="Your Email">
+                <textarea class="w-full px-4 py-3 border rounded-2xl shadow-lg focus:ring-2 focus:ring-blue-600" rows="5" placeholder="Your Message"></textarea>
+                <button class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition text-lg">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Include Font Awesome CSS in the head of your HTML document -->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16 mt-16">
+    <div class="container mx-auto text-center md:text-left fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- About Section -->
+            <div class="fade-in">
+                <h3 class="text-3xl font-semibold mb-4 footer-heading text-gradient">About Us</h3>
+                <p class="text-sm footer-text">We are committed to delivering the best repair services with integrity and professionalism. Our expertise ensures that your devices are in safe hands.</p>
             </div>
             
+            <!-- Links Section -->
+            <div class="fade-in">
+                <h3 class="text-3xl font-semibold mb-4 footer-heading text-gradient">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-yellow-500 transition duration-300 footer-text">Home</a></li>
+                    <li><a href="#services" class="hover:text-yellow-500 transition duration-300 footer-text">Our Services</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-500 transition duration-300 footer-text">Contact Us</a></li>
+                    <li><a href="public/privacy-policy.html" class="hover:text-yellow-500 transition duration-300 footer-text">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Media Section -->
+            <div class="fade-in">
+                <h3 class="text-3xl font-semibold mb-4 footer-heading text-gradient">Follow Us On Social Media's</h3>
+                <div class="flex justify-center space-x-8 mt-6">
+                    <!-- Social Media Icons with animations -->
+                    <a href="https://www.facebook.com/yourpage" target="_blank" class="icon hover:text-blue-600">
+                        <i class="fab fa-facebook-f text-4xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" class="icon hover:text-pink-500">
+                        <i class="fab fa-instagram text-4xl"></i>
+                    </a>
+                    <a href="https://t.me/yourpage" target="_blank" class="icon hover:text-blue-400">
+                        <i class="fab fa-telegram-plane text-4xl"></i>
+                    </a>
+                    <a href="https://twitter.com/yourpage" target="_blank" class="icon hover:text-blue-400">
+                        <i class="fab fa-twitter text-4xl"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="grid">
-                    <div class="card">
-                        <img src="assets/images/air-condtioner.png" alt="AC Repair Service" loading="lazy">
-                        <h3>AC Repair</h3>
-                        <p>Expert repairs for all types of air conditioning systems.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <img src="assets/images/installation.png" alt="Installation of AC" loading="lazy">
-                        <h3>Installation</h3>
-                        <p>Efficient AC installation tailored to your home or office.</p>
-                    </div>
-                    <div class="card">
-                        <img src="assets/images/fridege.png" alt="Repairing" loading="lazy">
-                        <h3>Refrigeration</h3>
-                        <p>Comprehensive refrigerator washing and maintenance.</p>
-                    </div>
-                    <div class="card">
-                        <img src="assets/images/fitting.png" alt="Electrical Fitting" loading="lazy">
-                        <h3>Electrical Fitting</h3>
-                        <p>Reliable electrical fitting services with precision.</p>
-                    </div>
-                    <div class="card">
-                        <img src="assets/images/home_service.png" alt="Electrical Fitting" loading="lazy">
-                        <h3>Home Services</h3>
-                        <p>We give home service at your call.</p>
-                    </div>
-                    <div class="card">
-                        <img src="assets/images/much more.png" alt="Electrical Fitting" loading="lazy">
-                        <h3>And Much More...</h3>
-                        <p>Search service by our search bar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="our-work" class="our-work">
-            <div class="container">
-                <h2>Our Work</h2>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/a.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        
-                    </div>
-        
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/b.mp4" type="video/mp4">
-                            Your browser auto Play support the video tag.
-                        </video>
-                    </div>
-        
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/c.mp4" type="video/mp4">
-                            Your browser auto play support the video tag.
-                        </video>
-                    </div>
-        
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/d.mp4" type="video/mp4">
-                            Your browser Auto play support the video tag.
-                        </video>
-                    </div>
-        
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/e.mp4" type="video/mp4">
-                            Your browser Auto play support the video tag.
-                        </video>
-                       
-                    </div>
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/f.mp4" type="video/mp4">
-                            Your browser Auto play support the video tag.
-                        </video>
-                        
-                    </div>
-                    <div class="video-card">
-                        <video controls preload="metadata" poster="assets/images/thumbnail.png">
-                            <source src="assets/video/g.mp4" type="video/mp4">
-                            Your browser Auto play support the video tag.
-                        </video>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>Located at Sadanand Chowk, Panipat, we provide top-notch AC repair, installation, and cooling solutions with unmatched professionalism and expertise.</p>
-            </div>
-        </section>
-        <section id="contact" class="contact book service ">
-            <div class="container">
-                <h2>Contact Us</ book now h2>
-                <p>Phone: +91 8923667019, +91 7027723786</p>
-                <p>Email: <a href="mailto:hyccooltech@gmail.com">hyccooltech@gmail.com</a></p>
-                <p>Address: Sadanand Chowk, Khanna Road, Panipat</p>
-        
-                <div class="map-container">
-                    <a href="https://www.google.com/maps/place/Sadanand+Chowk,+Khanna+Road,+Panipat" target="_bl
-                </div>
-            </div>
-        
-            <style>
-               
-            </style>
-        </section>
-        
-    </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 HYC COOL Tech Solution. All rights reserved.</p>
-    </footer>
-    <script src="js/app.js"></script>
-    <script src="js/service.js" defer></script>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6798d8483a8427326075ec20/1iimgpob4';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+        <!-- Address and Contact Section -->
+        <div class="mt-12 fade-in">
+            <p class="text-lg font-semibold footer-heading">Contact Us</p>
+            <p class="text-sm footer-text">Address: 123 Main Street, City, Country</p>
+            <p class="text-sm footer-text">Mobile: +1 (234) 567-8901</p>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="mt-8 fade-in">
+            <p class="text-lg footer-text">&copy; 2025 Aahil Repair. All rights reserved.</p>
+            <p class="text-sm mt-2 footer-text">Trusted by thousands of customers worldwide for top-tier repair services.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+
 </body>
-</html> auto video player 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
